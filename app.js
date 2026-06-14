@@ -471,3 +471,66 @@ window.agregarPocketAlCarrito = function(nombreBase, precioPack, elementoBoton) 
         }
     }
 };
+/* =========================================================
+   MOTOR DE BÚSQUEDA INTERNO (A PRUEBA DE ERRORES)
+========================================================= */
+
+// Esta línea protege el código para que cargue solo cuando la página esté lista
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const productos = [
+        { nombre: "Cuchareable de Leche KLIM", url: "cuchareables.html" },
+        { nombre: "Cuchareable Pie de Limón", url: "cuchareables.html" },
+        { nombre: "Galleta Red Velvet", url: "galletas.html" },
+        { nombre: "Galleta de Chocolate", url: "galletas.html" },
+        { nombre: "Malteada Vainilla Francesa", url: "malteadas.html" },
+        { nombre: "Malteada Macadamia Premium", url: "malteadas.html" },
+        { nombre: "Helado de Temporada", url: "malteadas.html" },
+        { nombre: "Pocket Cookies", url: "pocket.html" }
+    ];
+
+    const inputBuscador = document.getElementById('inputBuscador');
+    const cajaResultados = document.getElementById('cajaResultados');
+
+    // Solo activamos esto si el buscador realmente existe en la página actual
+    if (inputBuscador && cajaResultados) {
+        
+        inputBuscador.addEventListener('keyup', () => {
+            let textoBuscado = inputBuscador.value.toLowerCase().trim();
+            cajaResultados.innerHTML = '';
+            
+            if (textoBuscado === '') {
+                cajaResultados.style.display = 'none';
+                return;
+            }
+
+            let resultados = productos.filter(producto => 
+                producto.nombre.toLowerCase().includes(textoBuscado)
+            );
+
+            cajaResultados.style.display = 'block';
+
+            if (resultados.length > 0) {
+                resultados.forEach(producto => {
+                    let enlace = document.createElement('a');
+                    enlace.href = producto.url;
+                    enlace.textContent = producto.nombre;
+                    enlace.classList.add('item-resultado');
+                    cajaResultados.appendChild(enlace);
+                });
+            } else {
+                let mensajeVacio = document.createElement('div');
+                mensajeVacio.textContent = "No se encontraron productos.";
+                mensajeVacio.classList.add('sin-resultados');
+                cajaResultados.appendChild(mensajeVacio);
+            }
+        });
+
+        // Ocultar resultados si hacen clic fuera
+        document.addEventListener('click', (evento) => {
+            if (!inputBuscador.contains(evento.target) && !cajaResultados.contains(evento.target)) {
+                cajaResultados.style.display = 'none';
+            }
+        });
+    }
+});

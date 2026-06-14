@@ -1276,3 +1276,76 @@ h3.titulo-alimento {
     letter-spacing: -1px;          /* Juntamos un poco las letras para el efecto condensado de la imagen */
     font-size: 3.5rem !important;
 }
+/* =========================================================
+   ESTILOS DE LOS RESULTADOS DEL BUSCADOR
+========================================================= */
+#cajaResultados {
+    position: absolute;
+    top: 100%; /* Aparece justo debajo del input */
+    left: 0;
+    width: 100%;
+    background-color: #fdfbf7; /* Fondo crema de tu web */
+    border: 1px solid #d5c8c1;
+    border-top: none;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.05);
+    z-index: 1000; /* Asegura que flote sobre todo lo demás */
+    max-height: 300px;
+    overflow-y: auto; /* Agrega scroll si hay muchos resultados */
+    display: none; /* Oculto por defecto */
+}
+
+.item-resultado {
+    display: block;
+    padding: 12px 20px;
+    color: #3e2b23;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid #f0e9e5;
+    transition: background-color 0.3s ease;
+}
+
+.item-resultado:last-child {
+    border-bottom: none;
+}
+
+.item-resultado:hover {
+    background-color: #e5d8d0; /* Color al pasar el mouse */
+    color: #1a1512;
+}
+
+.sin-resultados {
+    padding: 15px;
+    color: #a3897e;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    text-align: center;
+}
+/* =========================================================
+   DISEÑO PREMIUM PARA LA CAJA DEL BUSCADOR
+========================================================= */
+.contenedor-buscador {
+    position: relative;
+    max-width: 400px; /* Evita que se estire demasiado en pantallas grandes */
+    margin: 0 auto;   /* Lo centra en la pantalla */
+}
+
+#inputBuscador {
+    width: 100%;
+    padding: 12px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: #3e2b23; /* Letra color chocolate oscuro */
+    background-color: transparent; /* Fondo transparente para que tome el color de tu página */
+    border: 1px solid #d5c8c1; /* Borde color arena sutil */
+    border-radius: 30px; /* Esto hace que tenga forma de píldora elegante */
+    outline: none; /* Quita el resplandor azul feo de los navegadores */
+    transition: all 0.3s ease;
+}
+
+/* Efecto cuando el cliente hace clic adentro para escribir */
+#inputBuscador:focus {
+    border-color: #3e2b23; /* El borde se oscurece para indicar que está activo */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); /* Sombra muy delicada */
+}
