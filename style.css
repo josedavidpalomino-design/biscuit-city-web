@@ -1,0 +1,1182 @@
+html {
+    scroll-behavior: smooth;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; /* Hace que la imagen llene el espacio sin deformarse ni estirarse */
+    image-rendering: -webkit-optimize-contrast; /* Truco profesional para máxima nitidez en pantallas Retina y 4K */
+    image-rendering: crisp-edges;
+}
+
+/* ================= CONFIGURACIÓN DE ALTA COSTURA ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff; /* Blanco absoluto estilo galería */
+    color: #000000; /* Negro puro */
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ================= CURSOR PREMIUM (STARK MINIMAL) ================= */
+@media (min-width: 1024px) {
+    .cursor-premium {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        border: 1px solid #000000; /* Anillo negro fino */
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        will-change: transform;
+        transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                    height 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                    background-color 0.3s ease;
+    }
+    .cursor-premium.hover-activo {
+        width: 45px;
+        height: 45px;
+        background-color: rgba(0, 0, 0, 0.03);
+    }
+}
+
+/* ================= HERO SENSORIAL (CINEMATOGRÁFICO) ================= */
+.hero-grolet {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.video-fondo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.overlay-grolet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35); /* Capa sutil de contraste cinematográfico */
+    z-index: 2;
+}
+
+.hero-contenido {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #ffffff;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.marca-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.titulo-grolet {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5.5rem;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.subtitulo-grolet {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 45px;
+}
+
+.btn-grolet-linea {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 12px 35px;
+    border: 1px solid #ffffff;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-grolet-linea:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* ================= LA SECCIÓN DE LA COLECCIÓN ================= */
+.seccion-coleccion {
+    padding: 140px 4%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.header-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid #e5e5e5; /* Línea de división arquitectónica */
+    padding-bottom: 25px;
+    margin-bottom: 70px;
+}
+
+.titulo-seccion {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem;
+    font-weight: 400;
+}
+
+.contador-piezas {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #7c7c7c;
+}
+
+/* GRID DE GALERÍA ASIMÉTRICA */
+.grid-grolet {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 60px;
+}
+
+.item-grolet {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-imagen-grolet {
+    position: relative;
+    width: 100%;
+    height: 480px; /* Fotos masivas y verticales */
+    overflow: hidden;
+    background-color: #f7f7f7;
+}
+
+.contenedor-imagen-grolet img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(15%); /* Un sutil desaturado para mantener la elegancia */
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+}
+
+.item-grolet:hover .contenedor-imagen-grolet img {
+    transform: scale(1.03);
+    filter: grayscale(0%); /* Cobra vida a todo color al posar el cursor */
+}
+
+/* META DATA DEL PRODUCTO */
+.meta-grolet {
+    padding-top: 25px;
+}
+
+.linea-superior {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #7c7c7c;
+    margin-bottom: 12px;
+}
+
+.numero-serie {
+    font-weight: 500;
+    color: #000000;
+}
+
+.nombre-creacion {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.descripcion-corta {
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 25px;
+    height: 50px;
+}
+
+.linea-inferior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+}
+
+.precio-grolet {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.btn-grolet-accion {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000; /* Botón minimalista de solo una línea inferior */
+    color: #000000;
+    padding: 5px 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: padding-right 0.3s ease, color 0.3s ease;
+}
+
+.btn-grolet-accion:hover {
+    padding-right: 10px; /* Sutil desplazamiento interactivo */
+    color: #7c7c7c;
+}
+
+/* ================= TRANSICIONES AUTOMÁTICAS SCROLL ================= */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.grid-grolet .item-grolet:nth-child(1) { transition-delay: 0.05s; }
+.grid-grolet .item-grolet:nth-child(2) { transition-delay: 0.15s; }
+.grid-grolet .item-grolet:nth-child(3) { transition-delay: 0.25s; }
+
+/* Responsive celular */
+@media (max-width: 768px) {
+    .titulo-grolet { font-size: 3.2rem; }
+    .titulo-seccion { font-size: 2.3rem; }
+    .contenedor-imagen-grolet { height: 380px; }
+}
+/* ================= HERO INTERACTIVO (LOOK GROLET) ================= */
+.hero-grolet-interactivo {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alineado a la izquierda */
+    padding-left: 8%;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+/* El contenedor maestro de los fondos */
+.capas-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Regla para cada fondo individual */
+.capa-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Invisibles por defecto */
+    transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Desvanecido de alta gama */
+}
+
+/* El fondo que tenga la clase .active se vuelve visible */
+.capa-item.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Asegurar que el video se adapte igual que las fotos */
+.media-grolet {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-grolet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 3; /* Por encima de los fondos, por debajo del texto */
+    pointer-events: none;
+}
+
+/* DISEÑO DEL MENÚ EDITORIAL */
+.hero-contenido-izq {
+    position: relative;
+    z-index: 4; /* Al frente de todo */
+}
+
+/* ================= MENÚ EDITORIAL ================= */
+.menu-lineas { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 5px; /* Menos separación para acomodar 6 ítems */
+}
+
+/* ================= MENÚ GIGANTE DE INICIO ================= */
+.item-menu-grolet {
+    font-family: 'Josefin Sans', sans-serif; /* La nueva fuente geométrica */
+    font-size: 4.5rem; /* Letras inmensas y pesadas */
+    font-weight: 700; /* Negrita al estilo Grolet */
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase; /* Todas mayúsculas como en tu foto */
+    line-height: 0.95;
+    letter-spacing: -1px; /* Letras un poco más juntas */
+    transition: opacity 0.3s ease, color 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ================= EFECTO HOVER TIPO CÉDRIC GROLET (TEXTO HUECO) ================= */
+.menu-lineas:hover .item-menu-grolet { 
+    opacity: 0.25; /* Oscurece las palabras que NO estás tocando */
+}
+
+.menu-lineas .item-menu-grolet:hover { 
+    opacity: 1; 
+    /* EL TRUCO MÁGICO DE LA IMAGEN */
+    color: transparent; /* Hace que el relleno de la letra desaparezca */
+    -webkit-text-stroke: 2px #ffffff; /* Dibuja una línea blanca alrededor de la letra */
+    
+    /* Si también quieres que la palabra se mueva a la derecha, deja esta línea. 
+       Si prefieres que se quede quieta como en el video, bórrala. */
+    transform: translateX(20px); 
+}
+
+/* Ajuste para pantallas más pequeñas (móviles/tablets) */
+@media (max-width: 1024px) {
+    .item-menu-grolet { font-size: 2.8rem; }
+}
+/* ================= DIFERENCIACIÓN DE COLORES EN HOVER ================= */
+.item-menu-grolet.color-galleta:hover { color: #d4a373; }   /* Dorado Tostado */
+.item-menu-grolet.color-malteada:hover { color: #f3e9dc; }  /* Crema Vainilla */
+.item-menu-grolet.color-especial:hover { color: #e63946; }  /* Rojo Terciopelo */
+.item-menu-grolet.color-cafe:hover { color: #b7b7a4; }      /* Verde Oliva / Trigo Seco */
+.item-menu-grolet.color-regalo:hover { color: #a8dadc; }    /* Azul Glaciar Lujo */
+
+/* Ajuste de espaciado para un menú más grande de 5 opciones */
+.menu-lineas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Reducimos espacio para que quepan cómodamente */
+}
+
+.item-menu-grolet {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem; /* Ajuste sutil de escala */
+    font-weight: 300;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    transition: opacity 0.3s ease, color 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ================= NUEVO PANEL DE EXHIBICIÓN FLOTANTE ================= */
+.panel-exhibicion {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50vw; /* Toma la mitad de la pantalla (en móvil tomará el 100%) */
+    height: 100vh;
+    background-color: #ffffff; /* Fondo blanco de galería */
+    z-index: 1000;
+    padding: 80px 5%;
+    box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    
+    /* Estado inicial: Escondido completamente a la derecha */
+    transform: translateX(100%);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Clase mágica que activa JS para abrirlo */
+.panel-exhibicion.abierto {
+    transform: translateX(0);
+}
+
+.btn-cerrar-panel {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-bottom: 50px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #000000;
+    transition: opacity 0.3s ease;
+}
+.btn-cerrar-panel:hover { opacity: 0.5; }
+
+/* Control de los sub-bloques de contenido interno */
+.categoria-bloque-contenido {
+    display: none; /* Ocultos todos por defecto dentro del panel */
+}
+.categoria-bloque-contenido.activo {
+    display: block; /* Solo se muestra el que clickeaste */
+}
+
+.titulo-panel-cat {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 15px;
+}
+
+/* Tarjetas minimalistas internas del panel */
+.mini-grid-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.tarjeta-panel-minimal {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 40px;
+}
+
+.tarjeta-panel-minimal .num {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.tarjeta-panel-minimal h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.tarjeta-panel-minimal p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.tarjeta-panel-minimal .precio {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* Pantallas móviles */
+@media (max-width: 1024px) {
+    .panel-exhibicion { width: 100vw; } /* Ocupa toda la pantalla en celular */
+    .item-menu-grolet { font-size: 3.2rem; }
+}
+/* Limpieza e Inclusión del bloque anterior... */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Montserrat', sans-serif; background-color: #ffffff; color: #000000; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* ================= VARIABLES DEL HERO INTERACTIVO ================= */
+.hero-grolet-interactivo { position: relative; height: 100vh; width: 100%; display: flex; align-items: center; justify-content: flex-start; padding-left: 8%; overflow: hidden; background-color: #000000; }
+.capas-fondo { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.capa-item { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.capa-item.active { opacity: 1; z-index: 2; }
+.media-grolet { width: 100%; height: 100%; object-fit: cover; }
+.overlay-grolet { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 3; pointer-events: none; }
+.hero-contenido-izq { position: relative; z-index: 4; }
+.menu-lineas { display: flex; flex-direction: column; gap: 8px; }
+
+.item-menu-grolet {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 300;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    transition: opacity 0.3s ease, color 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.menu-lineas:hover .item-menu-grolet { opacity: 0.25; }
+.menu-lineas .item-menu-grolet:hover { opacity: 1; transform: translateX(20px); }
+
+/* COLORES EN HOVER */
+.item-menu-grolet.color-galleta:hover { color: #d4a373; }
+.item-menu-grolet.color-malteada:hover { color: #f3e9dc; }
+.item-menu-grolet.color-especial:hover { color: #e63946; }
+.item-menu-grolet.color-cafe:hover { color: #b7b7a4; }
+.item-menu-grolet.color-regalo:hover { color: #a8dadc; }
+
+/* PANEL FLOTANTE DERECHO */
+.panel-exhibicion { position: fixed; top: 0; right: 0; width: 45vw; height: 100vh; background-color: #ffffff; z-index: 1000; padding: 80px 5%; box-shadow: -10px 0 40px rgba(0,0,0,0.15); display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+.panel-exhibicion.abierto { transform: translateX(0); }
+.btn-cerrar-panel { align-self: flex-end; background: none; border: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; margin-bottom: 50px; padding-bottom: 5px; border-bottom: 1px solid #000000; }
+.categoria-bloque-contenido { display: none; }
+.categoria-bloque-contenido.activo { display: block; }
+.titulo-panel-cat { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 400; margin-bottom: 40px; border-bottom: 1px solid #e5e5e5; padding-bottom: 15px; }
+.mini-grid-productos { display: flex; flex-direction: column; gap: 35px; }
+.tarjeta-panel-minimal { display: flex; flex-direction: column; position: relative; padding-left: 40px; }
+.tarjeta-panel-minimal .num { position: absolute; left: 0; top: 3px; font-size: 0.75rem; color: #888; }
+.tarjeta-panel-minimal h3 { font-size: 1.15rem; font-weight: 500; margin-bottom: 5px; }
+.tarjeta-panel-minimal p { font-size: 0.85rem; color: #666; margin-bottom: 8px; font-weight: 300; }
+.tarjeta-panel-minimal .precio { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; }
+
+/* CURSOR */
+@media (min-width: 1024px) {
+    .cursor-premium { position: fixed; top: 0; left: 0; width: 24px; height: 24px; border: 1px solid #ffffff; mix-blend-mode: difference; border-radius: 50%; pointer-events: none; z-index: 99999; will-change: transform; transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    /* El truco del mix-blend-mode hace que el cursor sea blanco en fondo negro y negro en fondo blanco de manera automática */
+}
+
+
+/* ================= NUEVO BLOQUE: SECCIONES DE EXPOSICIÓN INMERSIVAS ================= */
+.galeria-inmersiva-cat {
+    min-height: 100vh;
+    width: 100%;
+    padding: 100px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* FONDOS ATMOSFÉRICOS PERSONALIZADOS POR CATEGORÍA */
+.fondo-personalizado-galleta {
+    background-color: #fcf9f2; /* Crema trigo orgánico muy sutil */
+    color: #1a1512;
+}
+
+.fondo-personalizado-malteada {
+    background-color: #f4eff6; /* Un sutil tinte lavanda batido/crema */
+    color: #0b090a;
+}
+
+/* Estructura Izquierda: Texto de la Categoría */
+.bloque-info-cat {
+    max-width: 450px;
+}
+
+.serie-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #888;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.nombre-categoria-gigante {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.manifiesto-producto {
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 300;
+    color: #4a4a4a;
+}
+
+/* Estructura Derecha: Fotografía Masiva de Galería */
+.visual-producto-bloque {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.marco-foto-premium {
+    width: 100%;
+    max-width: 550px;
+}
+
+.marco-foto-premium img {
+    width: 100%;
+    height: 650px; /* Fotos ultra verticales pesadas de catálogo */
+    object-fit: cover;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.marco-foto-premium:hover img {
+    transform: scale(1.02); /* Sutil reacción al pasar el mouse por la foto */
+}
+
+.pie-foto-detalle {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 15px;
+}
+
+
+/* ANIMACIÓN DE ENTRADA POR SCROLL */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsividad para celulares */
+@media (max-width: 1024px) {
+    .galeria-inmersiva-cat { flex-direction: column; padding: 80px 5%; gap: 40px; }
+    .nombre-categoria-gigante { font-size: 3.2rem; }
+    .marco-foto-premium img { height: 450px; }
+    .panel-exhibicion { width: 100vw; }
+}
+/* Configuración Inicial */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* HERO INICIAL (INDEX) */
+.hero-grolet-interactivo { position: relative; height: 100vh; width: 100%; display: flex; align-items: center; justify-content: flex-start; padding-left: 8%; overflow: hidden; background-color: #000000; }
+.capas-fondo { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.capa-item { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.capa-item.active { opacity: 1; z-index: 2; }
+.media-grolet { width: 100%; height: 100%; object-fit: cover; }
+.overlay-grolet { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 3; pointer-events: none; }
+.hero-contenido-izq { position: relative; z-index: 4; }
+.menu-lineas { display: flex; flex-direction: column; gap: 8px; }
+
+.item-menu-grolet {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 300;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    transition: opacity 0.3s ease, color 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.menu-lineas:hover .item-menu-grolet { opacity: 0.25; }
+.menu-lineas .item-menu-grolet:hover { opacity: 1; transform: translateX(20px); }
+
+/* COLORES EN HOVER HOUSES */
+.item-menu-grolet.color-galleta:hover { color: #d4a373; }
+.item-menu-grolet.color-malteada:hover { color: #f3e9dc; }
+.item-menu-grolet.color-especial:hover { color: #e63946; }
+.item-menu-grolet.color-cafe:hover { color: #b7b7a4; }
+.item-menu-grolet.color-regalo:hover { color: #a8dadc; }
+
+
+/* ================= NUEVO ESTILO: VENTANAS INTERNAS (MULTI-PÁGINA) ================= */
+
+/* ================= FONDOS ATMOSFÉRICOS (ESTILO GROLET MINIMALISTA) ================= */
+/* Pasamos a un minimalismo extremo: fondos casi blancos y texto negro absoluto */
+.fondo-interno-destacados { background-color: #ffffff; color: #000000; } 
+.fondo-interno-galletas { background-color: #fafafa; color: #000000; } 
+.fondo-interno-pocket { background-color: #fdfcfb; color: #000000; }     
+.fondo-interno-cuchareables { background-color: #fcfbf9; color: #000000; } 
+.fondo-interno-cookiebites { background-color: #f9f9f9; color: #000000; }  
+
+/* ================= DISEÑO DE EXHIBICIÓN MINIMALISTA ================= */
+.contenedor-galeria-interna {
+    max-width: 1300px; /* Un poco más estrecho para forzar márgenes grandes */
+    margin: 0 auto;
+    padding: 180px 5% 100px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 150px; /* Separación masiva entre productos */
+}
+
+.pieza-exposicion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px; /* Mucho aire entre la foto y el texto */
+}
+
+.pieza-exposicion:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* El truco del estudio fotográfico */
+.marco-foto-interna {
+    flex: 1;
+    max-width: 550px;
+    background-color: transparent; /* Sin fondos pesados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marco-foto-interna img {
+    width: 100%;
+    max-height: 650px;
+    object-fit: contain; /* Evita que se corte la imagen */
+    /* EL TRUCO MÁGICO: Fusiona el fondo de la imagen con la web */
+    mix-blend-mode: multiply; 
+    filter: contrast(1.05) saturate(1.1); /* Realza el producto */
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pieza-exposicion:hover .marco-foto-interna img {
+    transform: scale(1.04) translateY(-10px); /* Efecto de levitación sutil */
+}
+
+/* Tipografía súper limpia */
+.detalles-pieza-interna {
+    max-width: 400px; /* Texto estrecho, muy editorial */
+    flex: 1;
+}
+
+.detalles-pieza-interna .serie {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #000000;
+    display: block;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 10px;
+    width: max-content;
+}
+
+.detalles-pieza-interna h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem; /* Letras inmensas */
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+.detalles-pieza-interna p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    font-weight: 300;
+    color: #555555;
+    margin-bottom: 40px;
+}
+
+.footer-compra-interna {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e5e5e5; /* Línea gris muy fina */
+    padding-top: 25px;
+}
+
+.footer-compra-interna .precio {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.btn-adquirir {
+    background: #000000; /* Botón negro sólido minimalista */
+    border: none;
+    color: #ffffff;
+    padding: 15px 35px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 0; /* Sin bordes redondeados, estilo alta costura */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-adquirir:hover {
+    background: #333333;
+    transform: translateY(-3px);
+}
+
+/* CURSOR INTELIGENTE */
+@media (min-width: 1024px) {
+    .cursor-premium { position: fixed; top: 0; left: 0; width: 24px; height: 24px; border: 1px solid #ffffff; mix-blend-mode: difference; border-radius: 50%; pointer-events: none; z-index: 99999; will-change: transform; transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+}
+
+/* ANIMACIÓN SCROLL NATIVA */
+.fade-in-up { opacity: 0; transform: translateY(40px); transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+.fade-in-up.visible { opacity: 1; transform: translateY(0); }
+
+/* Celulares */
+@media (max-width: 968px) {
+    .pieza-exposicion, .pieza-exposicion:nth-child(even) { flex-direction: column; gap: 40px; }
+    .marco-foto-interna img { height: 400px; }
+    .detalles-pieza-interna h2 { font-size: 2.5rem; }
+}
+/* ================= NAVBAR PREMIUM (ESTILO CÉDRIC GROLET) ================= */
+/* ================= NAVBAR PREMIUM ================= */
+.navbar-premium {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    color: #8c6b5d; 
+    background-color: transparent; 
+    /* Esta línea es la magia que hace que se mueva suavemente */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+
+/* La clase que le pondremos con JavaScript cuando baje el scroll */
+.navbar-premium.oculta {
+    transform: translateY(-100%); /* Sube la barra fuera de la pantalla */
+}
+
+/* ... (deja el resto de tus códigos .nav-left, .icon-btn intactos) ... */
+
+/* Contenedores laterales e iconos */
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    width: 26px; /* Tamaño delicado */
+    height: 26px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Aquí controlamos el grosor de las líneas de los iconos (1.2px es ultra fino) */
+.icon-btn svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 1.2px; 
+}
+
+.icon-btn:hover {
+    opacity: 0.5;
+    transform: translateY(-2px);
+}
+
+/* El logo central */
+.nav-center .logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+.nav-center .logo-text:hover {
+    opacity: 0.7;
+}
+
+/* Ajuste móvil para que no se amontone todo */
+@media (max-width: 768px) {
+    .nav-left, .nav-right { gap: 15px; }
+    .nav-center .logo-text { font-size: 1.3rem; letter-spacing: 2px; }
+    .icon-btn { width: 22px; height: 22px; }
+}
+/* ================= PANELES LATERALES (IZQUIERDA Y DERECHA) ================= */
+.overlay-menu { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); z-index: 1001; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s; }
+.overlay-menu.activo { opacity: 1; visibility: visible; }
+
+.sidebar-izquierdo, .sidebar-derecho { position: fixed; top: 0; width: 450px; max-width: 100vw; height: 100vh; background-color: #fdfbf7; z-index: 1002; padding: 80px 50px; display: flex; flex-direction: column; box-shadow: 0 0 40px rgba(0,0,0,0.05); transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* Lados de aparición */
+.sidebar-izquierdo { left: 0; transform: translateX(-100%); }
+.sidebar-derecho { right: 0; transform: translateX(100%); }
+.sidebar-izquierdo.abierto, .sidebar-derecho.abierto { transform: translateX(0); }
+
+/* Estilos internos de los paneles */
+.btn-cerrar-panel { position: absolute; top: 30px; right: 30px; background: none; border: none; font-size: 1.5rem; color: #8c6b5d; cursor: pointer; transition: transform 0.4s ease; }
+.btn-cerrar-panel:hover { transform: rotate(90deg); }
+.sidebar-contenido { display: flex; flex-direction: column; height: 100%; }
+.sidebar-titulo { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 4px; color: #a3897e; border-bottom: 1px solid #e5d8d0; padding-bottom: 10px; margin-bottom: 40px; }
+
+/* Carrito */
+.lista-carrito { flex: 1; overflow-y: auto; }
+.item-carrito { display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid #e5d8d0; }
+.info-item-car h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 5px; }
+.info-item-car p { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: #666; }
+.carrito-footer { margin-top: auto; padding-top: 20px; }
+.total-car { display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 500; margin-bottom: 20px; }
+.w-100 { width: 100%; }
+
+/* Formulario Usuario Minimalista */
+.formulario-minimalista input { width: 100%; border: none; border-bottom: 1px solid #000; background: transparent; padding: 15px 0; margin-bottom: 25px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; outline: none; transition: border-color 0.3s ease; }
+.formulario-minimalista input:focus { border-bottom-color: #8c6b5d; }
+.link-sutil { display: block; margin-top: 20px; text-align: center; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; color: #666; text-decoration: none; }
+
+/* Buscador a Pantalla Completa */
+.buscador-fullscreen { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(253, 251, 247, 0.98); z-index: 2000; display: flex; justify-content: center; align-items: center; transform: translateY(-100%); transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+.buscador-fullscreen.abierto { transform: translateY(0); }
+.btn-cerrar-buscador { position: absolute; top: 40px; right: 5%; background: none; border: none; font-size: 2rem; cursor: pointer; color: #000; }
+.buscador-contenedor { width: 80%; max-width: 800px; }
+.input-gigante { width: 100%; background: transparent; border: none; border-bottom: 2px solid #000; font-family: 'Cormorant Garamond', serif; font-size: 4rem; padding-bottom: 10px; outline: none; color: #000; text-align: center; }
+.input-gigante::placeholder { color: #ccc; }
+
+@media (max-width: 768px) {
+    .sidebar-izquierdo, .sidebar-derecho { padding: 60px 30px; }
+    .input-gigante { font-size: 2.5rem; }
+}
+/* ================= ESTILOS INTERNOS DEL MENÚ HAMBURGUESA ================= */
+/* ================= LETRAS DEL MENÚ LATERAL (HAMBURGUESA) ================= */
+.nav-sidebar a {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1512;
+    text-decoration: none;
+    text-transform: uppercase; /* También mayúsculas aquí */
+    line-height: 1.1;
+    letter-spacing: -1px;
+    transition: color 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-sidebar a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; /* Letra grande de menú boutique */
+    color: #1a1512;
+    text-decoration: none; /* Quita la línea de abajo */
+    line-height: 1.1;
+    transition: color 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Efecto al pasar el cursor (hover) */
+.nav-sidebar a:hover {
+    color: #8c6b5d; /* Color tierra de la marca */
+    transform: translateX(15px); /* Sutil desplazamiento a la derecha */
+}
+
+/* Ajuste para celulares */
+@media (max-width: 768px) {
+    .nav-sidebar a {
+        font-size: 2.2rem;
+    }
+}
+/* ================= LOGO FLOTANTE (SOLO PARA EL INICIO) ================= */
+.logo-home-flotante {
+    position: absolute;
+    top: 40px;
+    left: 8%; /* Alineado a la izquierda con el menú gigante */
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    z-index: 100;
+    transition: opacity 0.3s ease;
+}
+
+.logo-home-flotante:hover {
+    opacity: 0.7;
+}
+.tu-contenedor-de-fondo {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* ================= FOOTER PREMIUM BISCUIT CITY ================= */
+.footer-premium {
+    background-color: #fdfbf7; /* El mismo fondo crema suave */
+    border-top: 1px solid #e5d8d0;
+    padding: 60px 5% 30px 5%;
+    margin-top: 100px; /* Separación elegante del contenido */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-columna h4 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8c6b5d;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.footer-columna p, 
+.footer-columna ul {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: #555;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-columna ul li a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-columna ul li a:hover {
+    color: #1a1512; /* Se oscurece elegantemente al pasar el cursor */
+}
+
+/* Base del footer (Derechos de autor) */
+.footer-base {
+    border-top: 1px dashed #e5d8d0;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #888;
+}
+
+/* El eslabón secreto para ti (El administrador) */
+.link-secreto-admin {
+    color: #888;
+    text-decoration: none;
+    cursor: default;
+    transition: color 0.3s ease;
+}
+.link-secreto-admin:hover {
+    color: #8c6b5d; /* Solo cambia de color si sabes exactamente dónde poner el cursor */
+}
+/* =========================================================
+   CASCADA DE CHOCOLATE - MODO CLARO (Chocolate con Leche/Blanco)
+========================================================= */
+body {
+    /* Color crema base */
+    background-color: #fdfbf7; 
+    /* Degradado sutil que simula el flujo del chocolate */
+    background-image: linear-gradient(
+        180deg, 
+        rgba(140, 107, 93, 0.03) 0%, 
+        rgba(140, 107, 93, 0.09) 50%, 
+        rgba(140, 107, 93, 0.03) 100%
+    );
+    /* Hacemos el fondo el doble de alto para poder animarlo */
+    background-size: 100% 200%;
+    /* Ejecutamos la animación de forma infinita y fluida */
+    animation: cascadaFluida 18s linear infinite;
+    /* Color de texto para el modo claro */
+    color: #1a1512;
+}
+
+/* =========================================================
+   CASCADA DE CHOCOLATE - MODO OSCURO (Chocolate Amargo)
+========================================================= */
+@media (prefers-color-scheme: dark) {
+    body {
+        /* Color base chocolate muy oscuro */
+        background-color: #1a0f0c; 
+        /* Degradado con tonos cacao encendidos */
+        background-image: linear-gradient(
+            180deg, 
+            rgba(62, 27, 16, 0.3) 0%, 
+            rgba(89, 40, 24, 0.5) 50%, 
+            rgba(62, 27, 16, 0.3) 100%
+        );
+        /* Color de texto claro para que se lea en el fondo oscuro */
+        color: #fdfbf7;
+    }
+
+    /* Ajuste para que las tarjetas de producto no queden transparentes */
+    .tarjeta-producto {
+        background-color: rgba(38, 20, 14, 0.8) !important;
+        border-color: #3e1b10 !important;
+    }
+    
+    /* Forzamos a que los títulos y precios se lean bien en modo oscuro */
+    .tarjeta-producto h3, 
+    .tarjeta-producto span,
+    .tarjeta-producto p {
+        color: #fdfbf7 !important;
+    }
+}
+
+/* =========================================================
+   ANIMACIÓN DEL MOTOR DE LA CASCADA
+========================================================= */
+@keyframes cascadaFluida {
+    0% { 
+        background-position: 0% -200%; 
+    }
+    100% { 
+        background-position: 0% 0%; 
+    }
+}

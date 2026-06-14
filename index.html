@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biscuit City | Haute Pâtisserie</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cursor-premium" id="cursorPremium"></div>
+
+    <section class="hero-grolet-interactivo">
+        
+        <div class="capas-fondo">
+            <div class="capa-item active" id="bg-defecto">
+                <video autoplay muted loop playsinline class="media-grolet">
+                    <source src="video/video-hero.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="capa-item" id="bg-destacados" style="background-image: url('https://assets.olaclick.app/companies/logos/632e320f-1718-43bc-8c24-f28909dab7fe.png');"></div>
+            <div class="capa-item" id="bg-galletas" style="background-image: url('https://assets.olaclick.app/companies/gallery_images/400/f106c151-b4ce-493f-9181-c44133dc54d3.png');"></div>
+            <div class="capa-item" id="bg-pocket" style="background-image: url('https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/b57d91c2-9f2d-48b5-aa2a-cd7b3deda814.webp');"></div>
+            <div class="capa-item" id="bg-cuchareables" style="background-image: url('https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/2864cfae-6a38-45e8-a21b-3906e494bf76.webp');"></div>
+            <div class="capa-item" id="bg-cookiebites" style="background-image: url('https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/f5cf4976-6785-4b4c-b446-56bedce2e5e2.webp');"></div>
+            <div class="capa-item" id="bg-malteadasyhelados" style="background-image: url('https://www.cocinavital.mx/wp-content/uploads/2018/02/freak-shakes-fresa-festiva.jpg');"></div>
+        </div>
+
+        <div class="overlay-grolet"></div>
+        <a href="index.html" class="logo-home-flotante">Biscuit City</a>
+
+        <div class="hero-contenido-izq">
+            <nav class="menu-lineas">
+                <a href="destacados.html" class="item-menu-grolet color-destacados" data-bg="bg-destacados">Destacados</a>
+                <a href="galletas.html" class="item-menu-grolet color-galleta" data-bg="bg-galletas">Galletas</a>
+                <a href="pocket.html" class="item-menu-grolet color-pocket" data-bg="bg-pocket">Pocket</a>
+                <a href="cuchareables.html" class="item-menu-grolet color-cuchareable" data-bg="bg-cuchareables">Cuchareables</a>
+                <a href="cookiebites.html" class="item-menu-grolet color-cookiebites" data-bg="bg-cookiebites">Cookiebites</a>
+                <a href="malteadasyhelados.html" class="item-menu-grolet color-malteadasyhelados" data-bg="bg-malteadasyhelados">Malteadas y helados</a>
+            </nav>
+        </div>
+    </section>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Biscuit City</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Josefin+Sans:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #fdfbf7; color: #1a1512; margin: 0; padding: 50px; }
+        .header-admin { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1a1512; padding-bottom: 20px; margin-bottom: 40px; }
+        .header-admin h1 { font-family: 'Josefin Sans', sans-serif; font-size: 2rem; margin: 0; text-transform: uppercase; }
+        .badge { background: #8c6b5d; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
+        
+        /* Diseño de las tarjetas de pedidos */
+        .grid-pedidos { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
+        .tarjeta-pedido { background: white; padding: 30px; border: 1px solid #e5d8d0; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        .tarjeta-pedido h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin: 0 0 15px 0; border-bottom: 1px dashed #e5d8d0; padding-bottom: 10px;}
+        .producto-lista { list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.9rem; line-height: 1.8; color: #555; }
+        .total-pedido { font-size: 1.2rem; font-weight: 600; color: #1a1512; display: flex; justify-content: space-between; }
+        .loader { font-family: 'Cormorant Garamond', serif; font-size: 2rem; text-align: center; margin-top: 100px; color: #8c6b5d; }
+    </style>
+</head>
+<body>
+
+    <div class="header-admin">
+        <h1>Bureau de Commandes</h1>
+        <span class="badge">Administración Biscuit City</span>
+    </div>
+
+    <div id="contenedor-pedidos" class="grid-pedidos">
+        <div class="loader">Buscando nuevos pedidos en la cocina...</div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getFirestore, collection, getDocs, orderBy, query } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+        // Tu misma llave de acceso
+        const firebaseConfig = {
+            apiKey: "AIzaSyBT_zil4JVWUm7sJHZ6nvh54FVG9fV2U20",
+            authDomain: "biscuit-city.firebaseapp.com",
+            projectId: "biscuit-city",
+            storageBucket: "biscuit-city.firebasestorage.app",
+            messagingSenderId: "144252328279",
+            appId: "1:144252328279:web:c181865c2701a73b9f0612"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function cargarPedidos() {
+            const contenedor = document.getElementById('contenedor-pedidos');
+            try {
+                // Pedir a Firebase los pedidos ordenados por fecha
+                const q = query(collection(db, "pedidos"), orderBy("fecha", "desc"));
+                const querySnapshot = await getDocs(q);
+                
+                contenedor.innerHTML = ''; // Borrar el loader
+
+                if(querySnapshot.empty) {
+                    contenedor.innerHTML = '<p>No hay pedidos recientes.</p>';
+                    return;
+                }
+
+                // Dibujar cada pedido
+                querySnapshot.forEach((doc) => {
+                    const pedido = doc.data();
+                    const fecha = pedido.fecha ? pedido.fecha.toDate().toLocaleString() : 'Justo ahora';
+                    
+                    let listaHTML = '';
+                    pedido.productos.forEach(prod => {
+                        listaHTML += `<li>${prod.cantidad}x <strong>${prod.nombre}</strong> ($${prod.precio})</li>`;
+                    });
+
+                    const tarjeta = `
+                        <div class="tarjeta-pedido" style="position: relative;">
+                            <span style="font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 2px;">${fecha}</span>
+                            <h2>Orden #${doc.id.slice(-5).toUpperCase()}</h2>
+                            
+                            <div style="margin-bottom: 15px; font-size: 0.8rem; line-height: 1.5; color: #6e544a; background: #fdfbf7; padding: 10px; border-left: 3px solid #8c6b5d;">
+                                <strong>Cliente:</strong> ${pedido.cliente}<br>
+                                <strong>Entrega:</strong> ${pedido.metodoEntrega || 'No especificado'}<br>
+                                <strong>Pago:</strong> <span style="text-transform: uppercase; font-weight: bold; font-size: 0.75rem;">${pedido.metodoPago || 'Por definir'}</span>
+                            </div>
+
+                            <ul class="producto-lista">
+                                ${listaHTML}
+                            </ul>
+                            <div class="total-pedido" style="border-top: 1px dashed #e5d8d0; padding-top: 15px;">
+                                <span>Total Pagado:</span>
+                                <span>$${pedido.total.toFixed(2)}</span>
+                            </div>
+                        </div>
+                    `;
+                    contenedor.innerHTML += tarjeta;
+                });
+            } catch (error) {
+                console.error("Error leyendo pedidos:", error);
+                contenedor.innerHTML = '<p>Error al conectar con la base de datos.</p>';
+            }
+        }
+
+        // Ejecutar al abrir la página
+        cargarPedidos();
+    </script>
+</body>
+</html>

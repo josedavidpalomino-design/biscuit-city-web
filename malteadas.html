@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malteadas | Biscuit City</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="fondo-interno-malteadas">
+
+    <div class="cursor-premium" id="cursorPremium"></div>
+
+  <header class="navbar-premium">
+        <div class="nav-left">
+            <button class="icon-btn btn-menu" id="btnAbrirMenu" aria-label="Menú">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h18M3 6h18M3 18h18" stroke-linecap="round"/></svg>
+            </button>
+            
+        </div>
+        <div class="nav-center">
+            <a href="index.html" class="logo-text">Biscuit City</a>
+        </div>
+        <div class="nav-right">
+            <button class="icon-btn" id="btnAbrirBuscador" aria-label="Buscar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>
+            </button>
+            <button class="icon-btn" id="btnAbrirUsuario" aria-label="Usuario">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </button>
+            <button class="icon-btn" id="btnAbrirCarrito" aria-label="Carrito" style="position: relative;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    <span id="contador-carrito" style="position: absolute; top: -5px; right: -5px; background: #8c6b5d; color: white; font-size: 0.7rem; border-radius: 50%; padding: 2px 6px; font-family: 'Montserrat'; display: none;">0</span>
+</button>
+        </div>
+    </header>
+
+    <div class="overlay-menu" id="overlayGeneral"></div>
+
+    <aside class="sidebar-izquierdo" id="panelMenu">
+        <button class="btn-cerrar-panel" id="btnCerrarMenu">✕</button>
+        <div class="sidebar-contenido">
+            <span class="sidebar-titulo">Colección</span>
+            <nav class="nav-sidebar">
+                <a href="index.html">Inicio</a>
+                <a href="destacados.html">Destacados</a>
+                <a href="galletas.html">Galletas</a>
+                <a href="pocket.html">Pocket</a>
+                <a href="cuchareables.html">Cuchareables</a>
+                <a href="cookiebites.html">Cookiebites</a>
+                <a href="malteadas.html">Malteadas y Helados</a>
+            </nav>
+        </div>
+    </aside>
+
+    <aside class="sidebar-derecho" id="panelCarrito">
+        <button class="btn-cerrar-panel" id="btnCerrarCarrito">✕</button>
+        <div class="sidebar-contenido">
+            <span class="sidebar-titulo">Tu Selección</span>
+            <div class="lista-carrito">
+                <div class="item-carrito">
+                    <div class="info-item-car">
+                        <h4>Crown Pecan</h4>
+                        <p>$8.50 x 1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carrito-footer">
+                <div class="opciones-envio" style="margin-bottom: 20px; font-family: 'Montserrat', sans-serif;">
+                    <p style="font-size: 0.8rem; color: #a3897e; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Método de entrega:</p>
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer; font-size: 0.9rem;">
+                        <input type="radio" name="tipo_entrega" value="Domicilio" checked style="accent-color: #8c6b5d;"> Enviar a domicilio
+                    </label>
+                    <label style="display: block; cursor: pointer; font-size: 0.9rem;">
+                        <input type="radio" name="tipo_entrega" value="Recogida en tienda" style="accent-color: #8c6b5d;"> Pasar a recoger por tienda
+                    </label>
+                </div>
+
+                <div class="total-car"><span>Total</span><span>$8.50</span></div>
+                <button class="btn-adquirir w-100" onclick="finalizarPedido()">Finalizar Pedido</button>
+            </div>
+        </div>
+    </aside>
+
+    <aside class="sidebar-derecho" id="panelUsuario">
+        <button class="btn-cerrar-panel" id="btnCerrarUsuario">✕</button>
+        <div class="sidebar-contenido">
+            <span class="sidebar-titulo">Mi Espacio</span>
+            <form class="formulario-minimalista">
+                <input type="email" placeholder="Correo Electrónico" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit" class="btn-adquirir w-100" style="margin-top:20px;">Iniciar Sesión</button>
+            </form>
+            <a href="#" class="link-sutil">¿Crear una cuenta nueva?</a>
+        </div>
+    </aside>
+
+    <div class="buscador-fullscreen" id="panelBuscador">
+        <button class="btn-cerrar-buscador" id="btnCerrarBuscador">✕</button>
+        <div class="buscador-contenedor">
+            <input type="text" placeholder="Buscar una creación..." class="input-gigante">
+        </div>
+    </div>
+
+    <main class="contenedor-galeria-interna">
+        <h2 style="font-family: 'Josefin Sans', sans-serif; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 4px; color: #1a1512; border-bottom: 1px solid #e5d8d0; padding-bottom: 15px; margin-top: 50px; margin-bottom: 0; width: 100%;">
+    MALTEADAS PREMIUM - POPSY
+</h2>
+        
+           <div class="pieza-exposicion fade-in-up">
+            <div class="marco-foto-interna">
+                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/5ba419dd-dd91-4197-a5f8-816eb238c4f4.webp" alt="Crown Cookie Dessert">
+            </div>
+            <div class="detalles-pieza-interna">
+                <span class="serie">signature — 01
+</span>
+                <h2>MACADAMIA PREMIUM 12oz</h2>
+                <p>A base de helado de macadamia con trozos de macadamia y salsa de caramelo</p>
+                <div class="footer-compra-interna">
+                    <span class="precio">$ 18.500</span>
+                  <!-- CÓMBIALO A ESTO: Sin el punto en el número -->
+<button class="btn-adquirir" onclick="agregarAlCarrito('Macadamia Premium 12oz', 18500)">AÑADIR</button>
+                </div>
+            </div>
+        </div>
+
+            <div class="pieza-exposicion fade-in-up">
+            <div class="marco-foto-interna">
+                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/f6dda0e5-bd52-44e9-91cd-fef5cc53eaeb.webp" alt="Crown Cookie Dessert">
+            </div>
+            <div class="detalles-pieza-interna">
+                <span class="serie">signature — 01
+</span>
+                <h2>FRUTOS DEL BOSQUE PREMIUM 12oz</h2>
+                <p>A base de leche con los mas deliciosos y jugosos trozos seleccionados de las mejores fresas, moras y cerezas con salsa de chocolate</p>
+                <div class="footer-compra-interna">
+                    <span class="precio">$ 18.500</span>
+                  <!-- CÓMBIALO A ESTO: Sin el punto en el número -->
+<button class="btn-adquirir" onclick="agregarAlCarrito('Frutos del Bosque Premium 12oz', 18500)">AÑADIR</button>
+                </div>
+            </div>
+        </div>
+        <div class="pieza-exposicion fade-in-up">
+            <div class="marco-foto-interna">
+                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/39358130-0b1c-43aa-a32a-f6fd65d1538b.webp" alt="Crown Cookie Dessert">
+            </div>
+            <div class="detalles-pieza-interna">
+                <span class="serie">signature — 01
+</span>
+                <h2>VAINILLA FRANCESA PREMIUM 120z</h2>
+                <p>Inspirado en el famoso postre Francés creme Brulee con el resultado de un helado premium acompañado de salsa de caramelo.</p>
+                <div class="footer-compra-interna">
+                    <span class="precio">$ 18.500</span>
+                  <!-- CÓMBIALO A ESTO: Sin el punto en el número -->
+<button class="btn-adquirir" onclick="agregarAlCarrito('Vainilla Francesa Premium 120z', 18500)">AÑADIR</button>
+                </div>
+            </div>
+        </div>
+        <div class="pieza-exposicion fade-in-up">
+            <div class="marco-foto-interna">
+                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/dd9896ad-e143-446d-8038-b2eb1a1f438e.webp" alt="Crown Cookie Dessert">
+            </div>
+            <div class="detalles-pieza-interna">
+                <span class="serie">signature — 01
+</span>
+                <h2>COOKIES AND CREAM PREMIUM 12oz</h2>
+                <p>La tradición, la exclusividad y la experiencia en una mezcla de vainilla gourmet con crocantes trozos de galleta Oreo.</p>
+                <div class="footer-compra-interna">
+                    <span class="precio">$ 18.500</span>
+                  <!-- CÓMBIALO A ESTO: Sin el punto en el número -->
+<button class="btn-adquirir" onclick="agregarAlCarrito('Cookies and Cream Premium 12oz', 18500)">AÑADIR</button>
+                </div>
+            </div>
+        </div>
+            <h2 style="font-family: 'Josefin Sans', sans-serif; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 4px; color: #1a1512; border-bottom: 1px solid #e5d8d0; padding-bottom: 15px; margin-top: 50px; margin-bottom: 0; width: 100%;">
+    HELADOS POPSY GOURMET 60gr
+</h2>
+        <div class="pieza-exposicion fade-in-up">
+            <div class="marco-foto-interna">
+                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/2e8e3566-b4b1-4b5b-b34f-0cf83e3d3bf6.webp" alt="Crown Cookie Dessert">
+            </div>
+            <div class="detalles-pieza-interna">
+                <span class="serie">signature — 01
+</span>
+                <h2>HELADO DE OREO</h2>
+                <p>La tradición, la exclusividad y la experiencia en una mezcla de vainilla gourmet con crocantes trozos de galleta Oreo®</p>
+                <div class="footer-compra-interna">
+                    <span class="precio">$ 6.500</span>
+                  <!-- CÓMBIALO A ESTO: Sin el punto en el número -->
+<button class="btn-adquirir" onclick="agregarAlCarrito('HELADO DE OREO', 6500)">AÑADIR</button>
+                </div>
+            </div>
+        </div>
+        <div class="pieza-exposicion fade-in-up">
+            <div class="marco-foto-interna">
+                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/23f0fb4b-92db-4fe2-830c-98ee1e0a139f.webp" alt="Crown Cookie Dessert">
+            </div>
+            <div class="detalles-pieza-interna">
+                <span class="serie">signature — 01
+</span>
+                <h2>HELADO DE M&M</h2>
+                <p>La diversión de los colores transformados en un sabor único gourmet con la más exclusiva combinación del helado de vainilla y chocolate</p>
+                <div class="footer-compra-interna">
+                    <span class="precio">$ 6.500</span>
+                  <!-- CÓMBIALO A ESTO: Sin el punto en el número -->
+<button class="btn-adquirir" onclick="agregarAlCarrito('HELADO DE M&M', 6500)">AÑADIR</button>
+                </div>
+            </div>
+        </div>
+           <div class="pieza-exposicion fade-in-up">
+            <div class="marco-foto-interna">
+                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/cae62b82-930c-4818-b2be-3373b29f640f.webp" alt="Crown Cookie Dessert">
+            </div>
+            <div class="detalles-pieza-interna">
+                <span class="serie">signature — 01
+</span>
+                <h2>HELADO DEVAINILLA</h2>
+                <p>Un sabor clásico llevado a los más altos estándares gourmet, elaborado con la más fina vainilla en polvo importada</p>
+                <div class="footer-compra-interna">
+                    <span class="precio">$ 6.500</span>
+                  <!-- CÓMBIALO A ESTO: Sin el punto en el número -->
+<button class="btn-adquirir" onclick="agregarAlCarrito('HELADO DEVAINILLA', 6500)">AÑADIR</button>
+                </div>
+            </div>
+        </div>
+           <div class="pieza-exposicion fade-in-up">
+            <div class="marco-foto-interna">
+                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/a4ebc3d9-68d5-4faf-a514-195dd9fec1d4.webp" alt="Crown Cookie Dessert">
+            </div>
+            <div class="detalles-pieza-interna">
+                <span class="serie">signature — 01
+</span>
+                <h2>HELADO DE MILKY WAY</h2>
+                <p>Una alianza extra única: Acompañado de trozos de chocolatina MilkyWay® y la más exquisita salsa de caramelo</p>
+                <div class="footer-compra-interna">
+                    <span class="precio">$ 6.500</span>
+                  <!-- CÓMBIALO A ESTO: Sin el punto en el número -->
+<button class="btn-adquirir" onclick="agregarAlCarrito('HELADO DE MILKY WAY', 6500)">AÑADIR</button>
+                </div>
+            </div>
+        </div>
+           <div class="pieza-exposicion fade-in-up">
+            <div class="marco-foto-interna">
+                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/a0fd863f-e1b5-4c50-a051-529e19cc6b84.webp" alt="Crown Cookie Dessert">
+            </div>
+            <div class="detalles-pieza-interna">
+                <span class="serie">signature — 01
+</span>
+                <h2>HELADO DE FRUTOS DEL BOSQUE</h2>
+                <p>A base de leche con los más deliciosos y jugosos trozos seleccionados de las mejores fresas, moras y cerezas.</p>
+                <div class="footer-compra-interna">
+                    <span class="precio">$ 6.500</span>
+                  <!-- CÓMBIALO A ESTO: Sin el punto en el número -->
+<button class="btn-adquirir" onclick="agregarAlCarrito('HELADO DE FRUTOS DEL BOSQUE', 6500)">AÑADIR</button>
+                </div>
+            </div>
+        </div>
+           <div class="pieza-exposicion fade-in-up">
+            <div class="marco-foto-interna">
+                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/2061e8cd-3cff-4877-9f5a-12f6597ad0ac.webp" alt="Crown Cookie Dessert">
+            </div>
+            <div class="detalles-pieza-interna">
+                <span class="serie">signature — 01
+</span>
+                <h2>HELADO DE AREQUIPE</h2>
+                <p>La tradición llevada a nuestro helado sabor manjar blanco con deliciosas vetas de este exquisito dulce</p>
+                <div class="footer-compra-interna">
+                    <span class="precio">$ 6.500</span>
+                  <!-- CÓMBIALO A ESTO: Sin el punto en el número -->
+<button class="btn-adquirir" onclick="agregarAlCarrito('HELADO DE AREQUIPE', 6500)">AÑADIR</button>
+                </div>
+            </div>
+        </div>
+         
+    </main>
+<footer class="footer-premium">
+        <div class="footer-grid">
+            <div class="footer-columna">
+                <h4>La Maison</h4>
+                <p>Biscuit City representa el encuentro de la alta pastelería artesanal con el diseño contemporáneo. Cada pieza es horneada el mismo día para preservar la frescura absoluta de sus ingredientes.</p>
+            </div>
+
+            <div class="footer-columna">
+                <h4>Boutique & Horaires</h4>
+                <p>
+                    Lunes a Sábado: 08:00 — 20:00<br>
+                    Domingos: 09:00 — 18:00<br><br>
+                    Av. de la Haute Cuisine, No. 14
+                </p>
+            </div>
+
+            <div class="footer-columna">
+                <h4>Contact & Légal</h4>
+                <ul>
+                    <li><a href="#">Contacto de Prensa</a></li>
+                    <li><a href="#">Términos de Servicio</a></li>
+                    <li><a href="#">Políticas de Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-base">
+            <p>&copy; 2026 Biscuit City. Tous droits réservés.</p>
+            <p>Pensado en Cali — <a href="admin.html" class="link-secreto-admin">Bureau</a></p>
+        </div>
+    </footer>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
