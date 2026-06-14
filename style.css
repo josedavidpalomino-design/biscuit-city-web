@@ -1349,3 +1349,58 @@ h3.titulo-alimento {
     border-color: #3e2b23; /* El borde se oscurece para indicar que está activo */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); /* Sombra muy delicada */
 }
+/* =========================================================
+   BOTÓN FLOTANTE DE WHATSAPP (ESTILOS Y ANIMACIÓN)
+========================================================= */
+.btn-whatsapp-flotante {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366; /* Verde oficial de WhatsApp */
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 8px 20px rgba(37, 211, 102, 0.4);
+    z-index: 9999; /* Asegura que esté por encima de todo */
+    transition: all 0.3s ease;
+    animation: latidoWA 2s infinite; /* Activa la animación de pulso */
+}
+
+.icono-wa {
+    width: 35px;
+    height: 35px;
+    fill: currentColor;
+}
+
+/* Efecto al pasar el mouse (se agranda un poco y detiene el latido) */
+.btn-whatsapp-flotante:hover {
+    transform: scale(1.1);
+    background-color: #1ebe57;
+    box-shadow: 0px 10px 25px rgba(37, 211, 102, 0.6);
+    animation: none; 
+}
+
+/* Animación de latido suave */
+@keyframes latidoWA {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Ajuste del tamaño para celulares */
+@media (max-width: 768px) {
+    .btn-whatsapp-flotante {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+    .icono-wa {
+        width: 30px;
+        height: 30px;
+    }
+}
