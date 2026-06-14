@@ -1180,17 +1180,27 @@ body {
         background-position: 0% 0%; 
     }
 }
+
 /* =========================================================
-   AJUSTES EXCLUSIVOS PARA PANTALLAS DE CELULAR
+   AJUSTES EXCLUSIVOS PARA PANTALLAS DE CELULAR (REFORZADO)
 ========================================================= */
 @media (max-width: 768px) {
-    .menu-texto-adaptable {
-        font-size: 2.2rem !important; /* Reduce el tamaño de la letra */
-        line-height: 1.6 !important;  /* Da respiro y separación entre renglones */
-        display: block !important;    /* Fuerza a que cada palabra baje a su propia línea */
-        margin-bottom: 20px !important; /* Espacio extra entre cada opción */
-        word-wrap: break-word !important; /* Evita que textos largos se salgan de la pantalla */
+    /* 1. Obligamos al contenedor principal a apilar todo hacia abajo */
+    .nav-sidebar {
+        display: flex !important;
+        flex-direction: column !important; /* Esto fuerza la lista vertical */
+        gap: 25px !important; /* Espacio perfecto entre cada opción */
+        padding-top: 20px !important;
+    }
+
+    /* 2. Ajustamos las letras para que quepan y se vean elegantes */
+    .nav-sidebar a.menu-texto-adaptable {
+        font-size: 1.8rem !important; /* Tamaño ideal para móvil */
+        line-height: 1.2 !important;  
+        display: block !important;    
+        white-space: normal !important; /* Evita que las palabras se corten a lo ancho */
+        text-align: left !important;  
+        margin: 0 !important;
         width: 100% !important;
-        text-align: left !important;  /* Mantiene la alineación elegante */
     }
 }
