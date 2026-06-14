@@ -44,7 +44,7 @@
         <div class="sidebar-contenido">
             <span class="sidebar-titulo">Colección</span>
             <nav class="nav-sidebar">
-                <     <a href="index.html" class="menu-texto-adaptable">Inicio</a>
+                    <a href="index.html" class="menu-texto-adaptable">Inicio</a>
                 <a href="destacados.html" class="menu-texto-adaptable">Destacados</a>
                 <a href="galletas.html" class="menu-texto-adaptable">Galletas</a>
                 <a href="pocket.html" class="menu-texto-adaptable">Pocket</a>
@@ -121,12 +121,12 @@
         
         <div class="pieza-exposicion fade-in-up">
             <div class="marco-foto-interna">
-                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/2864cfae-6a38-45e8-a21b-3906e494bf76.webp" alt="Crown Cookie Dessert">
+                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/2864cfae-6a38-45e8-a21b-3906e494bf76.webp" alt="Crown Cookie Dessert" style="width: 100%; height: auto; object-fit: cover; border-radius: 12px; box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);">
             </div>
             <div class="detalles-pieza-interna">
                 <span class="serie">Signature — 01</span>
                 <h2>CUCHAREABLE MARACUYA </h2>
-                <p>CUCHARABLE DE MARACUYÁ 
+                <pstyle="color: #eccb91; opacity: 1; line-height: 1.6; font-size: 0.85rem; font-family: 'Montserrat', sans-serif;">CUCHARABLE DE MARACUYÁ 
 
 Ustedes lo pidieron…
 y aquí está 
@@ -142,10 +142,16 @@ crema pastelera y una crema de maracuyá que lo envuelve todo</p>
 <!-- Selector usando 'this' (Sin números en el ID) -->
 <div style="margin-bottom: 15px; font-family: 'Montserrat', sans-serif;">
     <label style="font-size: 0.75rem; color: #8c6b5d; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;">Tamaño:</label>
-    <select class="selector-tamano-cuchareable" onchange="actualizarPrecioCuchareable(this)" style="background: transparent; border: 1px solid #e5d8d0; padding: 5px 10px; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: #1a1512; cursor: pointer;">
-        <option value="9 oz">9 Onzas</option>
-        <option value="12 oz">12 Onzas</option>
-    </select>
+    <div class="selector-tamano-premium">
+    <span class="label-tamano">TAMAÑO:</span>
+    <div class="opciones-tamano">
+        <input type="radio" id="oz9" name="tamano_MARACUYA" value="9oz" checked>
+        <label for="oz9">9 Onzas</label>
+
+        <input type="radio" id="oz12" name="tamano_MARACUYA" value="12oz">
+        <label for="oz12">12 Onzas</label>
+    </div>
+</div>
 </div>
 
 <!-- Precio y Botón usando 'this' -->
@@ -160,12 +166,12 @@ crema pastelera y una crema de maracuyá que lo envuelve todo</p>
         </div>
 <div class="pieza-exposicion fade-in-up">
             <div class="marco-foto-interna">
-                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/3cd63dba-3504-4ece-aaab-42a4ce4a057f.webp" alt="Crown Cookie Dessert">
+                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/3cd63dba-3504-4ece-aaab-42a4ce4a057f.webp" alt="Crown Cookie Dessert" style="width: 100%; height: auto; object-fit: cover; border-radius: 12px; box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);">
             </div>
             <div class="detalles-pieza-interna">
                 <span class="serie">Signature — 01</span>
                 <h2>CUCHAREABLE SELVA NEGRA </h2>
-                <p>CUCHAREABLE PREMIUM SELVA NEGRA 
+                <pstyle="color: #eccb91; opacity: 1; line-height: 1.6; font-size: 0.85rem; font-family: 'Montserrat', sans-serif;">CUCHAREABLE PREMIUM SELVA NEGRA 
 
 Hay postres ricos…
 y hay postres que se comen lento, a cucharadas, sin culpa 
@@ -184,10 +190,16 @@ Todo armado capa por capa para que cada cucharada sea distinta, intensa y delici
 
 <div style="margin-bottom: 15px; font-family: 'Montserrat', sans-serif;">
     <label style="font-size: 0.75rem; color: #8c6b5d; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;">Tamaño:</label>
-    <select class="selector-tamano-cuchareable" onchange="actualizarPrecioCuchareable(this)" style="background: transparent; border: 1px solid #e5d8d0; padding: 5px 10px; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: #1a1512; cursor: pointer;">
-        <option value="9 oz">9 Onzas</option>
-        <option value="12 oz">12 Onzas</option>
-    </select>
+   <div class="selector-tamano-premium">
+    <span class="label-tamano">TAMAÑO:</span>
+    <div class="opciones-tamano">
+        <input type="radio" id="oz9" name="tamano_SELVA NEGRA" value="9oz" checked>
+        <label for="oz9">9 Onzas</label>
+
+        <input type="radio" id="oz12" name="tamano_SELVA NEGRA" value="12oz">
+        <label for="oz12">12 Onzas</label>
+    </div>
+</div>
 </div>
 
 <!-- Precio y Botón con el nombre del segundo sabor -->
@@ -202,12 +214,12 @@ Todo armado capa por capa para que cada cucharada sea distinta, intensa y delici
         </div>
        <div class="pieza-exposicion fade-in-up">
             <div class="marco-foto-interna">
-                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/738b1cff-b4c9-4860-a7d9-b1a1680ab623.webp" alt="Crown Cookie Dessert">
+                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/738b1cff-b4c9-4860-a7d9-b1a1680ab623.webp" alt="Crown Cookie Dessert" style="width: 100%; height: auto; object-fit: cover; border-radius: 12px; box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);">
             </div>
             <div class="detalles-pieza-interna">
                 <span class="serie">Signature — 01</span>
                 <h2>CUCHAREABLE DE LECHE KLIM </h2>
-                <p>Cuatro capas de pura cremosidad:
+                <pstyle="color: #eccb91; opacity: 1; line-height: 1.6; font-size: 0.85rem; font-family: 'Montserrat', sans-serif;">Cuatro capas de pura cremosidad:
 
 Crema pastelera suave,
 galleta de Leche KLIM®,
@@ -223,10 +235,16 @@ Escríbenos “LECHE” y pide el tuyo </p>
 
 <div style="margin-bottom: 15px; font-family: 'Montserrat', sans-serif;">
     <label style="font-size: 0.75rem; color: #8c6b5d; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;">Tamaño:</label>
-    <select class="selector-tamano-cuchareable" onchange="actualizarPrecioCuchareable(this)" style="background: transparent; border: 1px solid #e5d8d0; padding: 5px 10px; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: #1a1512; cursor: pointer;">
-        <option value="9 oz">9 Onzas</option>
-        <option value="12 oz">12 Onzas</option>
-    </select>
+    <div class="selector-tamano-premium">
+    <span class="label-tamano">TAMAÑO:</span>
+    <div class="opciones-tamano">
+        <input type="radio" id="oz9" name="tamano_KLIM" value="9oz" checked>
+        <label for="oz9">9 Onzas</label>
+
+        <input type="radio" id="oz12" name="tamano_KLIM" value="12oz">
+        <label for="oz12">12 Onzas</label>
+    </div>
+</div>
 </div>
 
 <!-- Precio y Botón con el nombre del segundo sabor -->
@@ -241,22 +259,28 @@ Escríbenos “LECHE” y pide el tuyo </p>
         </div>
         <div class="pieza-exposicion fade-in-up">
             <div class="marco-foto-interna">
-                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/3cd63dba-3504-4ece-aaab-42a4ce4a057f.webp" alt="Crown Cookie Dessert">
+                <img src="https://d2nagnwby8accc.cloudfront.net/companies/products/images/800/3cd63dba-3504-4ece-aaab-42a4ce4a057f.webp" alt="Crown Cookie Dessert" style="width: 100%; height: auto; object-fit: cover; border-radius: 12px; box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);">
             </div>
             <div class="detalles-pieza-interna">
                 <span class="serie">Signature — 01</span>
                 <h2>CUCHAREABLE DE PIE DE LIMON </h2>
-                <p>Cuchareable Pie de Limón 
+                <pstyle="color: #eccb91; opacity: 1; line-height: 1.6; font-size: 0.85rem; font-family: 'Montserrat', sans-serif;">Cuchareable Pie de Limón 
 Capas irresistibles de galleta de limón, crema pastelera suave, feuilletine crocante y una deliciosa crema de pie de limón que equilibra lo dulce con el toque cítrico perfecto. Un postre cremoso, crujiente y lleno de sabor en cada cucharada.</p>
                 <div class="footer-compra-interna">
        <!-- Selector de Onzas -->
 
 <div style="margin-bottom: 15px; font-family: 'Montserrat', sans-serif;">
     <label style="font-size: 0.75rem; color: #8c6b5d; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;">Tamaño:</label>
-    <select class="selector-tamano-cuchareable" onchange="actualizarPrecioCuchareable(this)" style="background: transparent; border: 1px solid #e5d8d0; padding: 5px 10px; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: #1a1512; cursor: pointer;">
-        <option value="9 oz">9 Onzas</option>
-        <option value="12 oz">12 Onzas</option>
-    </select>
+    <div class="selector-tamano-premium">
+    <span class="label-tamano">TAMAÑO:</span>
+    <div class="opciones-tamano">
+        <input type="radio" id="oz9" name="tamano_LIMON" value="9oz" checked>
+        <label for="oz9">9 Onzas</label>
+
+        <input type="radio" id="oz12" name="tamano_LIMON" value="12oz">
+        <label for="oz12">12 Onzas</label>
+    </div>
+</div>
 </div>
 
 <!-- Precio y Botón con el nombre del segundo sabor -->

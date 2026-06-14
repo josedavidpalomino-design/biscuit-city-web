@@ -1184,23 +1184,85 @@ body {
 /* =========================================================
    AJUSTES EXCLUSIVOS PARA PANTALLAS DE CELULAR (REFORZADO)
 ========================================================= */
+/* =========================================================
+   AJUSTES DE CELULAR (INICIO Y MENÚ LATERAL)
+========================================================= */
 @media (max-width: 768px) {
-    /* 1. Obligamos al contenedor principal a apilar todo hacia abajo */
+    
+    /* 1. ARREGLO PARA EL MENÚ NEGRO DE INICIO */
+    .menu-lineas {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    
+    .menu-lineas a, 
+    .item-menu-grolet {
+        font-size: 2.2rem !important; /* Reduce la letra gigante */
+        line-height: 1.2 !important;
+        white-space: normal !important; /* Obliga a que las palabras bajen de renglón */
+        word-wrap: break-word !important;
+        display: block !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* 2. ARREGLO PARA EL MENÚ BLANCO LATERAL */
     .nav-sidebar {
         display: flex !important;
-        flex-direction: column !important; /* Esto fuerza la lista vertical */
-        gap: 25px !important; /* Espacio perfecto entre cada opción */
+        flex-direction: column !important;
+        gap: 25px !important;
         padding-top: 20px !important;
     }
 
-    /* 2. Ajustamos las letras para que quepan y se vean elegantes */
-    .nav-sidebar a.menu-texto-adaptable {
-        font-size: 1.8rem !important; /* Tamaño ideal para móvil */
+    .nav-sidebar a {
+        font-size: 1.8rem !important; 
         line-height: 1.2 !important;  
         display: block !important;    
-        white-space: normal !important; /* Evita que las palabras se corten a lo ancho */
+        white-space: normal !important; 
         text-align: left !important;  
         margin: 0 !important;
         width: 100% !important;
     }
+}
+/* =========================================================
+   ESTILOS PREMIUM PARA SELECCIÓN DE TAMAÑO
+========================================================= */
+.selector-tamano-premium {
+    margin-bottom: 20px;
+}
+
+.label-tamano {
+    display: block;
+    font-size: 0.75rem;
+    color: #a3897e; /* Tono arena/café claro */
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.opciones-tamano {
+    display: flex;
+    gap: 15px; /* Espacio entre los botones */
+}
+
+/* Ocultamos el círculo feo por defecto de los radio buttons */
+.opciones-tamano input[type="radio"] {
+    display: none; 
+}
+
+/* Creamos el diseño del botón sin presionar */
+.opciones-tamano label {
+    padding: 10px 20px;
+    border: 1px solid #3e2b23; /* Borde color chocolate */
+    color: #3e2b23;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Diseño cuando el cliente selecciona el botón */
+.opciones-tamano input[type="radio"]:checked + label {
+    background-color: #3e2b23; /* Fondo chocolate */
+    color: #e5d8d0; /* Letras crema para que resalten */
 }
