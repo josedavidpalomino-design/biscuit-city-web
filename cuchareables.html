@@ -125,7 +125,7 @@
             </div>
             <div class="detalles-pieza-interna">
                 <span class="serie">Signature — 01</span>
-                <h2>CUCHAREABLE MARACUYA </h2>
+                <h3 class="titulo-alimento">CUCHAREABLE DE MARACUYÁ</h3>
                 <pstyle="color: #eccb91; opacity: 1; line-height: 1.6; font-size: 0.85rem; font-family: 'Montserrat', sans-serif;">CUCHARABLE DE MARACUYÁ 
 
 Ustedes lo pidieron…
@@ -142,16 +142,10 @@ crema pastelera y una crema de maracuyá que lo envuelve todo</p>
 <!-- Selector usando 'this' (Sin números en el ID) -->
 <div style="margin-bottom: 15px; font-family: 'Montserrat', sans-serif;">
     <label style="font-size: 0.75rem; color: #8c6b5d; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;">Tamaño:</label>
-    <div class="selector-tamano-premium">
-    <span class="label-tamano">TAMAÑO:</span>
-    <div class="opciones-tamano">
-        <input type="radio" id="oz9" name="tamano_MARACUYA" value="9oz" checked>
-        <label for="oz9">9 Onzas</label>
-
-        <input type="radio" id="oz12" name="tamano_MARACUYA" value="12oz">
-        <label for="oz12">12 Onzas</label>
-    </div>
-</div>
+    <select class="selector-tamano-cuchareable" onchange="actualizarPrecioCuchareable(this)" style="background: transparent; border: 1px solid #e5d8d0; padding: 5px 10px; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: #1a1512; cursor: pointer;">
+        <option value="9 oz">9 Onzas</option>
+        <option value="12 oz">12 Onzas</option>
+    </select>
 </div>
 
 <!-- Precio y Botón usando 'this' -->
@@ -170,7 +164,7 @@ crema pastelera y una crema de maracuyá que lo envuelve todo</p>
             </div>
             <div class="detalles-pieza-interna">
                 <span class="serie">Signature — 01</span>
-                <h2>CUCHAREABLE SELVA NEGRA </h2>
+                <h3 class="titulo-alimento">CUCHAREABLE SELVA NEGRA </h3>
                 <pstyle="color: #eccb91; opacity: 1; line-height: 1.6; font-size: 0.85rem; font-family: 'Montserrat', sans-serif;">CUCHAREABLE PREMIUM SELVA NEGRA 
 
 Hay postres ricos…
@@ -190,16 +184,10 @@ Todo armado capa por capa para que cada cucharada sea distinta, intensa y delici
 
 <div style="margin-bottom: 15px; font-family: 'Montserrat', sans-serif;">
     <label style="font-size: 0.75rem; color: #8c6b5d; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;">Tamaño:</label>
-   <div class="selector-tamano-premium">
-    <span class="label-tamano">TAMAÑO:</span>
-    <div class="opciones-tamano">
-        <input type="radio" id="oz9" name="tamano_SELVA NEGRA" value="9oz" checked>
-        <label for="oz9">9 Onzas</label>
-
-        <input type="radio" id="oz12" name="tamano_SELVA NEGRA" value="12oz">
-        <label for="oz12">12 Onzas</label>
-    </div>
-</div>
+    <select class="selector-tamano-cuchareable" onchange="actualizarPrecioCuchareable(this)" style="background: transparent; border: 1px solid #e5d8d0; padding: 5px 10px; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: #1a1512; cursor: pointer;">
+        <option value="9 oz">9 Onzas</option>
+        <option value="12 oz">12 Onzas</option>
+    </select>
 </div>
 
 <!-- Precio y Botón con el nombre del segundo sabor -->
@@ -218,7 +206,7 @@ Todo armado capa por capa para que cada cucharada sea distinta, intensa y delici
             </div>
             <div class="detalles-pieza-interna">
                 <span class="serie">Signature — 01</span>
-                <h2>CUCHAREABLE DE LECHE KLIM </h2>
+                <h3 class="titulo-alimento">CUCHAREABLE DE LECHE KLIM </h3>
                 <pstyle="color: #eccb91; opacity: 1; line-height: 1.6; font-size: 0.85rem; font-family: 'Montserrat', sans-serif;">Cuatro capas de pura cremosidad:
 
 Crema pastelera suave,
@@ -235,16 +223,10 @@ Escríbenos “LECHE” y pide el tuyo </p>
 
 <div style="margin-bottom: 15px; font-family: 'Montserrat', sans-serif;">
     <label style="font-size: 0.75rem; color: #8c6b5d; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;">Tamaño:</label>
-    <div class="selector-tamano-premium">
-    <span class="label-tamano">TAMAÑO:</span>
-    <div class="opciones-tamano">
-        <input type="radio" id="oz9" name="tamano_KLIM" value="9oz" checked>
-        <label for="oz9">9 Onzas</label>
-
-        <input type="radio" id="oz12" name="tamano_KLIM" value="12oz">
-        <label for="oz12">12 Onzas</label>
-    </div>
-</div>
+    <select class="selector-tamano-cuchareable" onchange="actualizarPrecioCuchareable(this)" style="background: transparent; border: 1px solid #e5d8d0; padding: 5px 10px; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: #1a1512; cursor: pointer;">
+        <option value="9 oz">9 Onzas</option>
+        <option value="12 oz">12 Onzas</option>
+    </select>
 </div>
 
 <!-- Precio y Botón con el nombre del segundo sabor -->
@@ -263,7 +245,7 @@ Escríbenos “LECHE” y pide el tuyo </p>
             </div>
             <div class="detalles-pieza-interna">
                 <span class="serie">Signature — 01</span>
-                <h2>CUCHAREABLE DE PIE DE LIMON </h2>
+                <h3 class="titulo-alimento">CUCHAREABLE DE PIE DE LIMON </h3>
                 <pstyle="color: #eccb91; opacity: 1; line-height: 1.6; font-size: 0.85rem; font-family: 'Montserrat', sans-serif;">Cuchareable Pie de Limón 
 Capas irresistibles de galleta de limón, crema pastelera suave, feuilletine crocante y una deliciosa crema de pie de limón que equilibra lo dulce con el toque cítrico perfecto. Un postre cremoso, crujiente y lleno de sabor en cada cucharada.</p>
                 <div class="footer-compra-interna">
@@ -271,16 +253,10 @@ Capas irresistibles de galleta de limón, crema pastelera suave, feuilletine cro
 
 <div style="margin-bottom: 15px; font-family: 'Montserrat', sans-serif;">
     <label style="font-size: 0.75rem; color: #8c6b5d; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;">Tamaño:</label>
-    <div class="selector-tamano-premium">
-    <span class="label-tamano">TAMAÑO:</span>
-    <div class="opciones-tamano">
-        <input type="radio" id="oz9" name="tamano_LIMON" value="9oz" checked>
-        <label for="oz9">9 Onzas</label>
-
-        <input type="radio" id="oz12" name="tamano_LIMON" value="12oz">
-        <label for="oz12">12 Onzas</label>
-    </div>
-</div>
+    <select class="selector-tamano-cuchareable" onchange="actualizarPrecioCuchareable(this)" style="background: transparent; border: 1px solid #e5d8d0; padding: 5px 10px; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: #1a1512; cursor: pointer;">
+        <option value="9 oz">9 Onzas</option>
+        <option value="12 oz">12 Onzas</option>
+    </select>
 </div>
 
 <!-- Precio y Botón con el nombre del segundo sabor -->

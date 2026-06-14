@@ -1266,3 +1266,13 @@ body {
     background-color: #3e2b23; /* Fondo chocolate */
     color: #e5d8d0; /* Letras crema para que resalten */
 }
+/* Este CSS hace que el título se vea condensado, audaz y amigable */
+h3.titulo-alimento {
+    font-family: 'Caveat', cursive; /* Usamos la fuente que importamos */
+    font-weight: 700;              /* Aseguramos que sea negrita, como 'HERMOSO' */
+    
+    /* Estos estilos adicionales imitan la apariencia de la imagen: */
+    text-transform: capitalize;    /* Solo la primera letra en mayúscula para legibilidad */
+    letter-spacing: -1px;          /* Juntamos un poco las letras para el efecto condensado de la imagen */
+    font-size: 3.5rem !important;
+}
