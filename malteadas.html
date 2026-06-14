@@ -67,21 +67,39 @@
                     </div>
                 </div>
             </div>
-            <div class="carrito-footer">
-                <div class="opciones-envio" style="margin-bottom: 20px; font-family: 'Montserrat', sans-serif;">
-                    <p style="font-size: 0.8rem; color: #a3897e; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Método de entrega:</p>
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer; font-size: 0.9rem;">
-                        <input type="radio" name="tipo_entrega" value="Domicilio" checked style="accent-color: #8c6b5d;"> Enviar a domicilio
-                    </label>
-                    <label style="display: block; cursor: pointer; font-size: 0.9rem;">
-                        <input type="radio" name="tipo_entrega" value="Recogida en tienda" style="accent-color: #8c6b5d;"> Pasar a recoger por tienda
-                    </label>
-                </div>
+      <div class="carrito-footer">
+    
+    <!-- 1. BLOQUE DE ENVÍO (Le añadimos color: #1a1512;) -->
+    <div class="opciones-envio" style="margin-bottom: 20px; font-family: 'Montserrat', sans-serif; color: #1a1512;">
+        <p style="font-size: 0.75rem; color: #a3897e; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; font-weight: 600;">Método de entrega:</p>
+        <label style="display: block; margin-bottom: 10px; cursor: pointer; font-size: 0.85rem;">
+            <input type="radio" name="tipo_entrega" value="Domicilio" checked style="accent-color: #8c6b5d;"> Enviar a domicilio
+        </label>
+        <label style="display: block; cursor: pointer; font-size: 0.85rem;">
+            <input type="radio" name="tipo_entrega" value="Recogida en tienda" style="accent-color: #8c6b5d;"> Pasar a recoger por tienda
+        </label>
+    </div>
 
-                <div class="total-car"><span>Total</span><span>$8.50</span></div>
-                <button class="btn-adquirir w-100" onclick="finalizarPedido()">Finalizar Pedido</button>
-            </div>
-        </div>
+    <!-- 2. BLOQUE DE PAGO (Le añadimos color: #1a1512;) -->
+    <div class="opciones-pago" style="margin-bottom: 25px; font-family: 'Montserrat', sans-serif; border-top: 1px dashed #e5d8d0; padding-top: 15px; color: #1a1512;">
+        <p style="font-size: 0.75rem; color: #a3897e; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; font-weight: 600;">Método de pago:</p>
+        <label style="display: block; margin-bottom: 10px; cursor: pointer; font-size: 0.85rem;">
+            <input type="radio" name="metodo_pago" value="Tarjeta en Línea" checked style="accent-color: #8c6b5d;"> Tarjeta de Crédito / Débito
+        </label>
+        <label style="display: block; margin-bottom: 10px; cursor: pointer; font-size: 0.85rem;">
+            <input type="radio" name="metodo_pago" value="Transferencia Bancaria" style="accent-color: #8c6b5d;"> Transferencia Bancaria Directa
+        </label>
+        <label style="display: block; cursor: pointer; font-size: 0.85rem;">
+            <input type="radio" name="metodo_pago" value="Contra Entrega" style="accent-color: #8c6b5d;"> Pago Contra Entrega
+        </label>
+    </div>
+
+    <div class="total-car" style="margin-bottom: 20px; color: #1a1512;">
+        <span>Total</span><span id="total-precio-carrito">$ 0</span>
+    </div>
+    <button class="btn-adquirir w-100" onclick="finalizarPedido()">FINALIZAR PEDIDO</button>
+
+</div>
     </aside>
 
     <aside class="sidebar-derecho" id="panelUsuario">

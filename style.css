@@ -1180,3 +1180,17 @@ body {
         background-position: 0% 0%; 
     }
 }
+/* =========================================================
+   AJUSTES EXCLUSIVOS PARA PANTALLAS DE CELULAR
+========================================================= */
+@media (max-width: 768px) {
+    .menu-texto-adaptable {
+        font-size: 2.2rem !important; /* Reduce el tamaño de la letra */
+        line-height: 1.6 !important;  /* Da respiro y separación entre renglones */
+        display: block !important;    /* Fuerza a que cada palabra baje a su propia línea */
+        margin-bottom: 20px !important; /* Espacio extra entre cada opción */
+        word-wrap: break-word !important; /* Evita que textos largos se salgan de la pantalla */
+        width: 100% !important;
+        text-align: left !important;  /* Mantiene la alineación elegante */
+    }
+}
