@@ -1404,3 +1404,76 @@ h3.titulo-alimento {
         height: 30px;
     }
 }
+/* =========================================================
+   FORZAR VISIBILIDAD DEL TÍTULO EN EL CARRITO
+========================================================= */
+/* Para el modo claro (Asegura que la letra sea oscura) */
+.lista-carrito h4 {
+    color: #4a3b32 !important; /* Un tono café/gris oscuro que combina con el resto de tu letra */
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Para el modo oscuro (Asegura que la letra sea blanca si el panel se pone oscuro) */
+.dark-mode .lista-carrito h4,
+.dark-mode .lista-carrito p {
+    color: #ffffff !important; 
+}
+/* =========================================================
+   ESTILOS PREMIUM PARA SELECTOR DE CANTIDAD
+========================================================= */
+.selector-cantidad-premium {
+    margin-bottom: 20px;
+}
+
+.label-cantidad {
+    display: block;
+    font-size: 0.75rem;
+    color: #a3897e; /* Tono arena/café claro */
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.controles-cantidad {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #3e2b23; /* Borde color chocolate */
+    border-radius: 50px; /* Forma de píldora */
+    overflow: hidden;
+    background-color: transparent;
+}
+
+/* Diseño de los botones + y - */
+.controles-cantidad button {
+    background-color: transparent;
+    color: #3e2b23;
+    border: none;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto sutil al pasar el mouse sobre los botones */
+.controles-cantidad button:hover {
+    background-color: #e5d8d0; 
+}
+
+/* El número del centro */
+.input-cantidad {
+    width: 40px;
+    text-align: center;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3e2b23;
+    background-color: transparent;
+    outline: none;
+    pointer-events: none; /* Bloquea el teclado para evitar errores */
+}

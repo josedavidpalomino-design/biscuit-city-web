@@ -333,20 +333,43 @@ function actualizarInterfazCarrito() {
 }
 
 // 3. Función global para agregar productos
-window.agregarAlCarrito = function(nombre, precio) {
-    const productoExistente = carrito.find(item => item.nombre === nombre);
+/* =========================================================
+   FUNCIÓN DEL CARRITO (Con rastreador inteligente)
+========================================================= */
+// IMPORTANTE: Ahora la función tiene 3 palabras en los paréntesis
+window.agregarAlCarrito = function(boton, nombre, precio) {
     
-    if (productoExistente) {
-        productoExistente.cantidad += 1;
-    } else {
-        carrito.push({ nombre, precio, cantidad: 1 });
+    // 1. BÚSQUEDA INTELIGENTE DE LA CANTIDAD
+    // El botón va buscando "hacia arriba" en las cajas hasta encontrar su propio número
+    let inputCantidad = null;
+    let contenedor = boton.parentElement;
+    
+    while (contenedor && contenedor !== document.body) {
+        inputCantidad = contenedor.querySelector('.input-cantidad');
+        if (inputCantidad) {
+            break; // ¡Encontró el número!
+        }
+        contenedor = contenedor.parentElement;
     }
-    
-    // Guardar en la memoria local
-    localStorage.setItem('carritoBiscuitCity', JSON.stringify(carrito));
-    
+
+    // Leemos el número de la pantalla (Si no lo encuentra, por seguridad suma 1)
+    let cantidadElegida = inputCantidad ? parseInt(inputCantidad.value) : 1;
+
+        // 2. LÓGICA DEL CARRITO
+    const productoExistente = carrito.find(item => item.nombre === nombre);
+
+    if (productoExistente) {
+        // Le sumamos la cantidad exacta que elegiste en la pantalla
+        productoExistente.cantidad += cantidadElegida; 
+    } else {
+        // Lo guardamos en la bolsa con la cantidad exacta
+        carrito.push({ nombre: nombre, precio: precio, cantidad: cantidadElegida });
+    }
+
+    // 3. GUARDAR Y MOSTRAR
+        localStorage.setItem('carritoBiscuitCity', JSON.stringify(carrito));
     actualizarInterfazCarrito();
-    abrirPanelLateral('panelCarrito'); // Abre el panel para que el usuario vea que se agregó
+    abrirPanelLateral('panelCarrito'); 
 };
 
 // 4. Función global para quitar productos
@@ -533,4 +556,38 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+});
+/* =========================================================
+   FUNCIONALIDAD DEL SELECTOR DE CANTIDAD (ACTUALIZADO)
+========================================================= */
+document.addEventListener('DOMContentLoaded', () => {
+    // Buscamos todos los selectores de cantidad en la página
+    const todosLosSelectores = document.querySelectorAll('.selector-cantidad-premium');
+
+    todosLosSelectores.forEach(selector => {
+        // Para cada selector, identificamos sus botones y su input
+        const btnRestar = selector.querySelector('.btn-restar');
+        const btnSumar = selector.querySelector('.btn-sumar');
+        const inputCantidad = selector.querySelector('.input-cantidad');
+
+        // Nos aseguramos de que existan antes de darles las órdenes
+        if (btnRestar && btnSumar && inputCantidad) {
+            
+            // Orden para el botón de SUMAR (+)
+            btnSumar.addEventListener('click', () => {
+                let valorActual = parseInt(inputCantidad.value);
+                inputCantidad.value = valorActual + 1;
+            });
+
+            // Orden para el botón de RESTAR (-)
+            btnRestar.addEventListener('click', () => {
+                let valorActual = parseInt(inputCantidad.value);
+                // La regla de oro: No bajar de 1
+                if (valorActual > 1) {
+                    inputCantidad.value = valorActual - 1;
+                }
+            });
+            
+        }
+    });
 });

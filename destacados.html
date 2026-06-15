@@ -134,7 +134,20 @@
                 <p style="color: #3e2b23; opacity: 1; line-height: 1.6; font-size: 1.25rem; font-family: 'Montserrat', sans-serif;">Galleta de trozos de chocolate blanco y leche Klim, rellena de brigadeiro de leche Klim y topping de leche Klim.</p>
                 <div class="footer-compra-interna">
                     <span class="precio">$14.900</span>
-                   <button class="btn-adquirir" onclick="agregarAlCarrito('LECHE KLIM', 14900)">Añadir</button>
+    <!-- SELECTOR DE CANTIDAD PREMIUM (Limpio) -->
+<div class="selector-cantidad-premium">
+    <span class="label-cantidad">CANTIDAD:</span>
+    <div class="controles-cantidad">
+        <!-- Quitamos el onclick de aquí -->
+        <button type="button" class="btn-restar">-</button>
+        
+        <input type="text" class="input-cantidad" value="1" readonly>
+        
+        <!-- Quitamos el onclick de aquí también -->
+        <button type="button" class="btn-sumar">+</button>
+    </div>
+</div>
+                   <button class="btn-adquirir" onclick="agregarAlCarrito(this, 'LECHE KLIM', 14900)">Añadir</button>
                 </div>
             </div>
         </div>
