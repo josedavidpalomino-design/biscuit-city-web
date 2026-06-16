@@ -437,19 +437,21 @@ window.actualizarPrecioCuchareable = function(elementoSelect) {
 };
 
 // 2. AÑADIR AL CARRITO (Detectando el tamaño correcto del selector vecino)
-window.agregarCuchareableConTamano = function(nombreBase, elementoBoton) {
+// 2. AÑADIR AL CARRITO (Detectando el tamaño correcto del selector vecino)
+window.agregarCuchareableConTamano = function(elementoBoton, nombreBase) {
     // Buscamos la tarjeta del producto donde está este botón
     const tarjetaProducto = elementoBoton.closest('.tarjeta-producto') || elementoBoton.parentElement.parentElement.parentElement;
     const selector = tarjetaProducto.querySelector('.selector-tamano-cuchareable');
-    
+
     const tamanoElegido = selector ? selector.value : "9 oz";
     let precioFinal = tamanoElegido === "12 oz" ? PRECIO_12_OZ : PRECIO_9_OZ;
     const nombreCompleto = `${nombreBase} (${tamanoElegido})`;
-    
-    window.agregarAlCarrito(nombreCompleto, precioFinal);
+
+    // Le pasamos el balón correctamente a la función principal: (botón, nombre, precio)
+    window.agregarAlCarrito(elementoBoton, nombreCompleto, precioFinal);
 };
 // --- FUNCIÓN DE CONTROL PARA POCKETS (CORREGIDA SIN ALERTA) ---
-window.agregarPocketAlCarrito = function(nombreBase, precioPack, elementoBoton) {
+window.agregarPocketAlCarrito = function(elementoBoton, nombreBase, precioPack) {
     const contenedorPocket = elementoBoton.closest('.tarjeta-pocket');
     const minimoRequerido = parseInt(contenedorPocket.getAttribute('data-minimo'));
     
@@ -475,7 +477,7 @@ window.agregarPocketAlCarrito = function(nombreBase, precioPack, elementoBoton) 
     const nombreCompletoProducto = `${nombreBase} [${saboresElegidos.join(', ')}]`;
 
     // 1. Añadimos el pack al carrito
-    window.agregarAlCarrito(nombreCompletoProducto, precioPack);
+    window.agregarAlCarrito(elementoBoton, nombreCompletoProducto, precioPack);
 
     // 2. Desmarcamos las casillas para que quede limpio para la próxima
     casillasMarcadas.forEach(casilla => casilla.checked = false);
